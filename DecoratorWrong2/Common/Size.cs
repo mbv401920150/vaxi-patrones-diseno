@@ -22,11 +22,11 @@ public class Size
             this.Length + other.Length,
             this.Height + other.Height);
 
-    public Size AddToTop(Size other) =>
+    public Size AddToTop(Length height) =>
         new Size(
-            this.Width.Max(other.Width),
-            this.Length.Max(other.Length),
-            this.Height.Add(other.Height));
+            this.Width,
+            this.Length,
+            this.Height.Add(height));
 
     public Size ScaleHeight(decimal factor) =>
         new Size(this.Width, this.Length, this.Height.Scale(factor));
